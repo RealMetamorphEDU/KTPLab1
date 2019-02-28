@@ -25,11 +25,12 @@
     }
 ]
 
+
 def print_students(students):
     print u"Имя студента".ljust(15), \
-          u"Группа".ljust(8), \
-          u"Возраст".ljust(8), \
-          u"Оценки".ljust(20)
+        u"Группа".ljust(8), \
+        u"Возраст".ljust(8), \
+        u"Оценки".ljust(20)
     for student in students:
         print \
             student["name"].ljust(15), \
@@ -38,16 +39,18 @@ def print_students(students):
             str(student["marks"]).ljust(20)
     print "\n"
 
+
 def filter_students(students, min_middle):
     result = []
     for student in students:
-        middle = 0;
+        middle = 0
         for value in student["marks"]:
             middle += value
         middle /= len(student["marks"])
         if middle >= min_middle:
             result.append(student)
     return result
+
 
 print_students(groupmates)
 print_students(filter_students(groupmates, 4))
